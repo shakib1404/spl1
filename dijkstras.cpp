@@ -11,29 +11,34 @@ int cost[MAX][MAX];
 int minDistance(int distance[], bool sptSet[])
 {
 
-	// Initialize min value
-	int min = INT_MAX;
+    // Initialize min value
+    int min = INT_MAX;
     int min_index = -1;
 
-	for (int i = 0; i < vertex; i++){
-		if (sptSet[i] == false && distance[i] <= min){
-			min = distance[i];
+    for (int i = 0; i < vertex; i++)
+    {
+        if (sptSet[i] == false && distance[i] <= min)
+        {
+            min = distance[i];
 
             min_index = i;
         }
     }
 
-	return min_index;
+    return min_index;
 }
 
 void printSolution(int src, int distance[])
 {
-    for (int i = 1; i < vertex; i++){
-        if (distance[i] == INT_MAX) {
+    for (int i = 1; i < vertex; i++)
+    {
+        if (distance[i] == INT_MAX)
+        {
             cout << "There is no path from vertex " << src << " to vertex " << i << endl;
         }
 
-        else{
+        else
+        {
             cout << "SoureVertex \t DestinationVertex \t Distance from Source" << endl;
             cout << "     " << src << " \t\t\t" << i << " \t\t\t" << distance[i] << endl;
         }
@@ -43,19 +48,20 @@ void printSolution(int src, int distance[])
 
 void dijkstra(int src)
 {
-	int distance[vertex];
+    int distance[vertex];
 
-	bool sptSet[vertex]; //shortest path tree set
+    bool sptSet[vertex]; //shortest path tree set
 
-	// Initializes all distances as INFINITE and stpSet[] as false
-	for (int i = 0; i < vertex; i++){
-		distance[i] = INT_MAX;
+    // Initializes all distances as INFINITE and stpSet[] as false
+    for (int i = 0; i < vertex; i++)
+    {
+        distance[i] = INT_MAX;
         sptSet[i] = false;
         prevNodeIndex[i] = 0;
     }
 
-	// Distance of source vertex from itself is always 0
-	distance[src] = 0;
+    // Distance of source vertex from itself is always 0
+    distance[src] = 0;
 
     //updating distance value for Source
     if (CHOOSE == 1) showFixedNodeDistance(src, distance[src]); // for fixed graph
@@ -64,9 +70,10 @@ void dijkstra(int src)
 
 
     // it finds shortest path for all vertices
-    for (int count = 0; count < vertex; count++) {
+    for (int count = 0; count < vertex; count++)
+    {
 
-	    int u = minDistance(distance, sptSet);
+        int u = minDistance(distance, sptSet);
 
         if (CHOOSE == 1) fixedGraphConnection_1(prevNodeIndex[u], u); // for fixed graph
         else if (CHOOSE == 2) graphConnection_1(prevNodeIndex[u], u); // for random graph
@@ -80,13 +87,15 @@ void dijkstra(int src)
 
         delay(1000);
 
-		// Marking the picked vertex as processed
-		sptSet[u] = true;
+        // Marking the picked vertex as processed
+        sptSet[u] = true;
 
-		// Updating distance value of the adjacent vertices of the picked vertex.
-		for (int v = 0; v < vertex; v++){
+        // Updating distance value of the adjacent vertices of the picked vertex.
+        for (int v = 0; v < vertex; v++)
+        {
 
-			if (!sptSet[v] && (graph_G[u][v] != 0) && (distance[u] != INT_MAX) && (distance[u] + cost[u][v] < distance[v])){
+            if (!sptSet[v] && (graph_G[u][v] != 0) && (distance[u] != INT_MAX) && (distance[u] + cost[u][v] < distance[v]))
+            {
 
                 distance[v] = distance[u] + cost[u][v];
                 prevNodeIndex[v] = u;
@@ -118,7 +127,7 @@ void dijkstra(int src)
         delay(1000);
     }
 
-	printSolution(src, distance);
+    printSolution(src, distance);
 }
 
 
@@ -152,16 +161,20 @@ void Dijkstras_algorithm()
 
     int src;
 
-    if (CHOOSE == 1){
+    if (CHOOSE == 1)
+    {
         //for Fixed Graph
         vertex = fixed_NODES;
         edge = fixed_EDGES;
 
-        for (int i = 0; i < vertex; i++){
-            for (int j = 0; j < vertex; j++){
+        for (int i = 0; i < vertex; i++)
+        {
+            for (int j = 0; j < vertex; j++)
+            {
                 graph_G[i][j] = fixed_GRAPH[i][j];
 
-                if (graph_G[i][j] != 0) {
+                if (graph_G[i][j] != 0)
+                {
                     cost[i][j] = graph_G[i][j];
                 }
             }
@@ -171,13 +184,16 @@ void Dijkstras_algorithm()
 
     }
 
-    else if (CHOOSE == 2){
+    else if (CHOOSE == 2)
+    {
         //for Random Input
         vertex = NODES;
         edge = EDGES;
 
-        for (int i = 0; i < vertex; i++){
-            for (int j = 0; j < vertex; j++){
+        for (int i = 0; i < vertex; i++)
+        {
+            for (int j = 0; j < vertex; j++)
+            {
                 graph_G[i][j] = GRAPH[i][j];
                 if (graph_G[i][j] != 0) cost[i][j] = graph_G[i][j];
             }
@@ -187,13 +203,16 @@ void Dijkstras_algorithm()
 
     }
 
-    else {
+    else
+    {
         //for User Input
         vertex = NODES;
         edge = EDGES;
 
-        for (int i = 0; i < vertex; i++){
-            for (int j = 0; j < vertex; j++){
+        for (int i = 0; i < vertex; i++)
+        {
+            for (int j = 0; j < vertex; j++)
+            {
                 graph_G[i][j] = GRAPH[i][j];
                 if (graph_G[i][j] != 0) cost[i][j] = graph_G[i][j];
             }
@@ -203,8 +222,8 @@ void Dijkstras_algorithm()
 
     }
 
-	// Function call
-	dijkstra(src);
+    // Function call
+    dijkstra(src);
 
     settextstyle(GOTHIC_FONT, HORIZ_DIR, 2);
     outtextxy(300, 550, "Successfully ended...");
@@ -214,9 +233,11 @@ void Dijkstras_algorithm()
 
     int x = mousex();
     int y = mousey();
-    if (ismouseclick(WM_LBUTTONDOWN)) {
+    if (ismouseclick(WM_LBUTTONDOWN))
+    {
         clearmouseclick(WM_LBUTTONDOWN); // clear the mouse click event
-        if (x > 50 && x < 110 && y > 50 && y < 90) {
+        if (x > 50 && x < 110 && y > 50 && y < 90)
+        {
             // button was clicked
             cleardevice();
             delay(100);
