@@ -1,0 +1,86 @@
+# depslib dependency file v1.0
+1698557338 source:c:\users\asus\documents\stlc++\splfinal\main.cpp
+	"head.h"
+
+1702597248 c:\users\asus\documents\stlc++\splfinal\head.h
+	<bits/stdc++.h>
+	<stdio.h>
+	<graphics.h>
+	<cstdlib>
+	<ctime>
+	<queue>
+	<limits.h>
+
+1702597887 source:c:\users\asus\documents\stlc++\splfinal\gmenu.cpp
+	"head.h"
+
+1702379426 source:c:\users\asus\documents\stlc++\splfinal\fixedgraph.cpp
+	"head.h"
+
+1701912913 source:c:\users\asus\documents\stlc++\splfinal\undirectedfixedgraph.cpp
+	"head.h"
+
+1702375770 source:c:\users\asus\documents\stlc++\splfinal\bfs.cpp
+	"head.h"
+
+1701964601 source:c:\users\asus\documents\stlc++\splfinal\dfs.cpp
+	"head.h"
+	<graphics.h>
+
+1701964633 source:c:\users\asus\documents\stlc++\splfinal\topologicalsort.cpp
+	"head.h"
+
+1698547300 source:c:\users\asus\documents\stlc++\splfinal\randomgraphconstructor.cpp
+	"head.h"
+
+1702379426 source:c:\users\asus\documents\stlc++\splfinal\usergraphconstructor.cpp
+	"head.h"
+
+1702375770 source:c:\users\asus\documents\stlc++\splfinal\bellmanford.cpp
+	"head.h"
+
+1701966470 source:c:\users\asus\documents\stlc++\splfinal\primsalgo.cpp
+	"head.h"
+
+1702200841 source:c:\users\asus\documents\stlc++\splfinal\directedgraph.cpp
+	"head.h"
+
+1701953725 source:c:\users\asus\documents\stlc++\splfinal\weightgraphconstruct.cpp
+	"head.h"
+
+1702375770 source:c:\users\asus\documents\stlc++\splfinal\dijkstras.cpp
+	"head.h"
+
+1698775616 source:c:\users\asus\documents\stlc++\splfinal\weightedrandomgraphconstruct.cpp
+	"head.h"
+
+1698777095 source:c:\users\asus\documents\stlc++\splfinal\kruskalalgo.cpp
+	"head.h"
+
+1702185584 source:c:\users\asus\documents\stlc++\splfinal\floyd.cpp
+	"head.h"
+
+1702375770 source:c:\users\asus\documents\stlc++\splfinal\edmondkarp.cpp
+	"head.h"
+
+1702373214 source:c:\users\asus\documents\stlc++\splfinal\bfsupdate.cpp
+	"head.h"
+
+1702374194 source:c:\users\asus\documents\stlc++\splfinal\dfsupate.cpp
+	"head.h"
+
+1702556314 source:c:\users\asus\documents\stlc++\splfinal\topologicalsortupadate.cpp
+	"head.h"
+
+1702533408 source:c:\users\asus\documents\stlc++\splfinal\khantopo.cpp
+	"head.h"
+
+1702538261 source:c:\users\asus\documents\stlc++\splfinal\scc.cpp
+	"head.h"
+
+1702568093 source:c:\users\asus\documents\stlc++\splfinal\kargers.cpp
+	"head.h"
+
+1702597755 source:c:\users\asus\documents\stlc++\splfinal\primsalgo2.cpp
+	"head.h"
+
